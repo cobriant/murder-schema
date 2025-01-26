@@ -1,0 +1,25 @@
+# Examples
+
+# filter: find observations that fit any logical condition
+income %>% 
+  filter(annual_income > 100000)
+
+people %>% 
+  filter(name == "Christoper Peteuil")
+
+# filter + str_detect: for partial matches
+people %>% 
+  filter(str_detect(name, "Amy"))
+
+# arrange: sorts the data set from lowest to highest by the variable of your choice
+income %>% 
+  arrange(annual_income)
+
+# arrange + desc: sort highest to lowest
+income %>% 
+  arrange(desc(annual_income))
+
+# chain together multiple steps
+crime_scene_report %>% 
+  filter(city == "Duluth") %>% 
+  arrange(desc(date))
